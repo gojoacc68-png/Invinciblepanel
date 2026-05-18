@@ -1,0 +1,19 @@
+{
+  "name": "invincible-panel-api",
+  "version": "1.0.0",
+  "description": "INVINCIBLE PANEL — Vercel serverless API backend",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0"
+  },
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  }
+}

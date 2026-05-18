@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "name": "invincible-panel-api",
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/$1" }
+  ],
+  "env": {
+    "JWT_SECRET": "@jwt_secret",
+    "TELEGRAM_BOT_TOKEN": "@telegram_bot_token",
+    "ADMIN_DB_URL": "@admin_db_url",
+    "ENCRYPTION_KEY": "@encryption_key",
+    "BASE_URL": "@base_url",
+    "OTP_EXPIRY_SECONDS": "120",
+    "SESSION_EXPIRY_HOURS": "24",
+    "MAX_OTP_ATTEMPTS": "5",
+    "RATE_LIMIT_WINDOW_MS": "60000",
+    "RATE_LIMIT_MAX_REQUESTS": "100"
+  },
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, PUT, DELETE, PATCH, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization, X-API-Key" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" }
+      ]
+    }
+  ]
+}
